@@ -1,0 +1,175 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap');
+
+:root {
+  --bg-dark: #152730;
+  --text-dark: #0f1a1c;
+  --text-light: #f4f4f4;
+  --subtext: #486581;
+  --card-square-size: 250px;
+  --max-card-width: 1000px;
+}
+
+.work-section {
+  background-color: var(--bg-dark);
+  padding: 60px 20px;
+  font-family: 'Montserrat', sans-serif;
+  color: var(--text-light);
+}
+
+.section-title {
+  text-align: center;
+  font-size: 36px;
+  margin-bottom: 40px;
+}
+
+.cards-wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 30px;
+  justify-content: center;
+}
+
+.experience-block.collapsed {
+  display: inline-flex;
+}
+
+.experience-block.expanded {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+
+.card {
+  display: flex;
+  flex-direction: row;
+  border-radius: 20px;
+  background-color: transparent;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  min-height: var(--card-square-size);
+  width: 100%;
+  max-width: var(--max-card-width);
+}
+
+.card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.2);
+}
+
+.card-left {
+  background-color: white;
+  border-radius: 20px;
+  width: var(--card-square-size);
+  height: var(--card-square-size);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 20px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  flex-shrink: 0;
+}
+
+.company-block {
+  font-size: 18px;
+  font-weight: bold;
+  text-align: center;
+  padding: 40px 10px;
+  border-radius: 12px;
+  flex-grow: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--text-dark);
+}
+
+.toggle-btn {
+  margin-top: 15px;
+  padding: 10px 14px;
+  font-size: 15px;
+  font-weight: 600;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background-color 0.3s ease;
+  color: var(--text-dark);
+}
+
+.toggle-btn:hover {
+  filter: brightness(0.9);
+}
+
+.toggle-btn .icon {
+  margin-left: 10px;
+  display: flex;
+  align-items: center;
+}
+
+.card-right {
+  background-color: white;
+  border-radius: 20px;
+  padding: 25px;
+  margin-left: 20px;
+  flex: 1;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.card-right h3 {
+  font-size: 22px;
+  color: var(--text-dark);
+  margin-bottom: 10px;
+}
+
+.period {
+  font-size: 15px;
+  color: var(--subtext);
+  margin-bottom: 8px;
+}
+
+.tech-stack {
+  font-size: 15px;
+  font-weight: 505;
+  color: var(--subtext);
+  margin-bottom: 8px;
+}
+
+.learnings {
+  list-style-type: disc;
+  padding-left: 20px;
+  color: var(--subtext);
+  font-size: 17px;
+}
+
+.learnings li {
+  margin-bottom: 6px;
+}
+
+@media (max-width: 768px) {
+  .experience-block.collapsed,
+  .experience-block.expanded {
+    width: 100%;
+  }
+
+  .card {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .card-left,
+  .card-right {
+    width: 100%;
+    margin-left: 0;
+  }
+
+  .card-left {
+    height: auto;
+  }
+
+  .card-right {
+    margin-top: 20px;
+  }
+}
