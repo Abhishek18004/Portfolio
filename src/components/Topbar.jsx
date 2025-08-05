@@ -5,7 +5,7 @@ function Topbar() {
   return (
     <div className="topbar">
       <div className="logo">
-        <img src="/Yellow_logo.png" alt="Logo" />
+        <img src={`${process.env.PUBLIC_URL}/Yellow_logo.png`} alt="Logo" />
       </div>
       <div className="nav-links">
         <a href="#about">About</a>

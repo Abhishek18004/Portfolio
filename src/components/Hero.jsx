@@ -11,7 +11,7 @@ function Hero() {
     <section className="hero" id="hero">
       <div className="hero-left">
         <div className="hero-image-frame">
-          <img src="/profile.jpg" alt="Abhishek Karthik" />
+          <img src={`${process.env.PUBLIC_URL}/profile.jpg`} alt="Abhishek Karthik" />
         </div>
       </div>
       <div className="hero-right">
