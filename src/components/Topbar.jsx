@@ -1,11 +1,11 @@
 import React from 'react';
-import './Topbar.css'; // We'll create this next
+import './Topbar.css';
 
 function Topbar() {
   return (
     <div className="topbar">
       <div className="logo">
-        <img src={`${process.env.PUBLIC_URL}/Yellow_logo.png`} alt="Logo" />
+        <img src={`${process.env.PUBLIC_URL}/Yellow_Logo.png`} alt="Logo" />
       </div>
       <div className="nav-links">
         <a href="#about">About</a>
@@ -14,7 +14,6 @@ function Topbar() {
         <a href="#skills">Skills</a>
         <a href="#connect">Connect</a>
       </div>
-      
     </div>
   );
 }

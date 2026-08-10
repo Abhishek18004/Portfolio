@@ -3,15 +3,14 @@ import './Hero.css';
 
 function Hero() {
   const handleResumeClick = () => {
-    window.open('https://drive.google.com/file/d/1quS5fm4m4kaJLjM2gOTdQZtFGDHx1wkj/view?usp=sharing', '_blank');
-
+    window.open('https://drive.google.com/file/d/1DqL-MeJPQ7kn6KGfUqGFu3UMnNAWUMFh/view?usp=sharing', '_blank');
   };
 
   return (
     <section className="hero" id="hero">
       <div className="hero-left">
         <div className="hero-image-frame">
-          <img src={`${process.env.PUBLIC_URL}/profile.jpg`} alt="Abhishek Karthik" />
+          <img src={`${process.env.PUBLIC_URL}/main_photo.jpg`} alt="Abhishek Karthik" />
         </div>
       </div>
       <div className="hero-right">
@@ -28,6 +27,7 @@ function Hero() {
           <a
             href="https://www.linkedin.com/in/abhishek-karthik-567981291/"
             target="_blank"
+            rel="noopener noreferrer"
             className="btn-outline button"
           >
             <span className="text">LinkedIn</span>

@@ -10,7 +10,11 @@ function ProjectCard({ project }) {
         <h4 className="image-title">{project.imageTitle}</h4>
 
         <div className="project-image card">
-          <img src={`${process.env.PUBLIC_URL}/${project.imageSrc}`} alt={project.title} className="card-image" />
+          <img 
+            src={`${process.env.PUBLIC_URL}/${project.imageSrc}`} 
+            alt={project.title} 
+            className="card-image" 
+          />
           <div className="card__content">
             <p className="card__description">{project.description}</p>
           </div>
