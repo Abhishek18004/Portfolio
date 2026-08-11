@@ -27,7 +27,7 @@ function Connect() {
           <FaGithub />
           <span>GitHub</span>
         </a>
-        <a href="https://drive.google.com/file/d/1quS5fm4m4kaJLjM2gOTdQZtFGDHx1wkj/view?usp=sharing" target="_blank" rel="noopener noreferrer" className="social-btn" id="resume">
+        <a href="https://drive.google.com/file/d/1DqL-MeJPQ7kn6KGfUqGFu3UMnNAWUMFh/view?usp=sharing" target="_blank" rel="noopener noreferrer" className="social-btn" id="resume">
           <FaFileAlt />
           <span>Resume</span>
         </a>

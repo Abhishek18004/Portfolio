@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import './Projects.css';
 import ProjectCard from './ProjectCard';
 
@@ -21,8 +21,8 @@ const projectData = [
     tools_language: 'Python, Git',
     frameworks: 'Streamlit, Google Gemini API, Tavily API, RAG',
     githubLink: 'https://github.com/Abhishek18004/PathFinder',
-    showLiveDemo: false,
-    liveDemoLink: '',
+    showLiveDemo: true,
+    liveDemoLink: 'https://drive.google.com/file/d/1AZEeJMJteTURwdrE9gQwJriMw60zeebf/view?usp=sharing',
     imageSrc: 'Project_PathFinder.png',
     imageTitle: 'AI-Powered Dynamic Learning & Project Roadmap Generator',
     description: 'An interactive learning platform that transforms unstructured goals into personalized roadmaps using a Retrieval-Augmented Generation (RAG) pipeline and a dynamic stateful engine for real-time adaptations.',
@@ -53,18 +53,6 @@ const projectData = [
   },
   {
     id: 5,
-    title: 'DigitAI',
-    tools_language: 'JavaScript, HTML, CSS, Python, Git',
-    frameworks: 'TensorFlow.js, Tailwind CSS, Convolutional Neural Networks (CNN), MNIST dataset',
-    githubLink: 'https://github.com/Abhishek18004/Handwritten-Digit-Recognition',
-    showLiveDemo: false,
-    liveDemoLink: 'https://yourprojectthree.live',
-    imageSrc: 'Project_DigitAI.png',
-    imageTitle: 'Handwritten Digit Recognition App',
-    description: 'DigitAI is an application that uses a trained Convolutional Neural Network (CNN) model for recognition of handwritten digits from uploaded pictures. It provides an interactive frontend to upload digit pictures and get predictions in real-time via TensorFlow.',
-  },
-  {
-    id: 6,
     title: 'Cluster Chutney',
     tools_language: 'Python, pandas, NumPy, Git, scikit-learn, matplotlib, seaborn',
     frameworks: 'Streamlit, joblib, PCA, KMeans Clustering',
@@ -76,7 +64,7 @@ const projectData = [
     description: 'A Streamlit-based user profiling & segmentation dashboard that helps businesses explore, cluster, and understand user behavior for targeted advertising and personalization.',
   },
   {
-    id: 7,
+    id: 6,
     title: 'Fishers',
     tools_language: 'Python, HTML, CSS, JavaScript, Git, Flask',
     frameworks: 'scikit-learn, Flask',
@@ -86,6 +74,19 @@ const projectData = [
     imageSrc: 'Project_Fisher.png',
     imageTitle: 'Phishing Detection Flask App',
     description: 'Fishers is a web application that assists in confirming whether a specified URL is secure or dangerous. The system utilizes a trained ML model to analyze structural and behavioral features of the URLs and display results.',
+  },
+  /*
+  {
+    id: 7,
+    title: 'DigitAI',
+    tools_language: 'JavaScript, HTML, CSS, Python, Git',
+    frameworks: 'TensorFlow.js, Tailwind CSS, Convolutional Neural Networks (CNN), MNIST dataset',
+    githubLink: 'https://github.com/Abhishek18004/Handwritten-Digit-Recognition',
+    showLiveDemo: false,
+    liveDemoLink: 'https://yourprojectthree.live',
+    imageSrc: 'Project_DigitAI.png',
+    imageTitle: 'Handwritten Digit Recognition App',
+    description: 'DigitAI is an application that uses a trained Convolutional Neural Network (CNN) model for recognition of handwritten digits from uploaded pictures. It provides an interactive frontend to upload digit pictures and get predictions in real-time via TensorFlow.',
   },
   {
     id: 8,
@@ -111,16 +112,43 @@ const projectData = [
     imageTitle: 'Socket-based Character Guessing Game',
     description: "DoraDora is a client-server game developed using Python's socket programming. The user responds to a set of Yes/No questions about a mystery Doraemon character, and the server tries to guess the character. After guessing correctly, the server sends an image of the character to the client.",
   },
+  */
 ];
 
 function Projects() {
+  const [showAll, setShowAll] = useState(false);
+
+  const visibleProjects = showAll ? projectData : projectData.slice(0, 4);
+
   return (
     <div id="projects" className="projects-section">
       <h2 className="projects-title">PROJECTS</h2>
       <div className="projects-list">
-        {projectData.map((project) => (
+        {visibleProjects.map((project) => (
           <ProjectCard key={project.id} project={project} />
         ))}
+      </div>
+
+      <div className="projects-toggle-container">
+        <button
+          className="toggle-btn"
+          onClick={() => setShowAll(!showAll)}
+        >
+          <span className="circle" aria-hidden="true">
+            <svg
+              className={`arrow-icon ${showAll ? 'arrow-up' : 'arrow-down'}`}
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              strokeWidth="2.5"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+            >
+              <polyline points="6 9 12 15 18 9" />
+            </svg>
+          </span>
+          <span className="button-text">{showAll ? 'Show Less' : 'Show More'}</span>
+        </button>
       </div>
     </div>
   );

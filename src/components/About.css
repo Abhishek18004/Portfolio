@@ -1,5 +1,10 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap');
 
+:root {
+  /* Adjust this variable (0px, 1px, 2px, etc.) to increase/decrease font sizes inside all boxes */
+  --box-font-boost: 2.5px;
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -16,8 +21,8 @@ body {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
-  padding: 40px;
-  gap: 60px;
+  padding: 30px 40px;
+  gap: 40px;
 }
 
 .left-column,
@@ -27,58 +32,66 @@ body {
 }
 
 .title {
-  font-size: 36px;
-  margin-bottom: 20px;
+  font-size: 28px;
+  margin-bottom: 14px;
   color: #f4f4f4;
 }
 
 .description {
-  font-size: 18px;
-  line-height: 1.6;
-  margin-bottom: 40px;
+  font-size: 14px;
+  line-height: 1.5;
+  margin-bottom: 24px;
   color: #aebcbf;
 }
 
 .sub-heading {
-  font-size: 24px;
-  margin: 40px 0 20px;
+  font-size: 20px;
+  margin: 24px 0 14px;
   color: #c8d5d8;
 }
 
 .education-section {
   display: flex;
   flex-direction: column;
-  gap: 20px;
+  gap: 14px;
 }
 
 .edu-box {
   background: #000000;
-  border-left: 5px solid #279d98;
-  padding: 15px 20px;
+  border-left: 4px solid #279d98;
+  padding: 12px 16px;
   border-radius: 8px;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
 }
 
 .edu-box h3 {
   color: #f4f4f4;
-  margin-bottom: 5px;
+  margin-bottom: 4px;
+  font-size: calc(16px + var(--box-font-boost));
+}
+
+.edu-box h4 {
+  font-size: calc(14px + var(--box-font-boost));
+  color: #c8d5d8;
+  margin-bottom: 2px;
 }
 
 .edu-box p {
   margin: 2px 0;
   color: #aebcbf;
+  font-size: calc(13px + var(--box-font-boost));
 }
 
 /* === TIMELINE === */
 #timeline {
   width: 100%;
-  padding: 20px 0;
+  padding: 10px 0;
   position: relative;
 }
 
 #timeline ul {
   position: relative;
-  margin-left: 60px;
+  margin-left: 40px;
   padding-left: 0;
 }
 
@@ -87,7 +100,7 @@ body {
   position: absolute;
   top: 0;
   left: 0px;
-  width: 4px;
+  width: 3px;
   height: 100%;
   background: linear-gradient(to bottom, #279d98 0%, #ffc857 100%);
   z-index: 0;
@@ -96,16 +109,16 @@ body {
 #timeline ul li {
   position: relative;
   list-style: none;
-  margin-bottom: 40px;
+  margin-bottom: 24px;
 }
 
 #timeline ul li::after {
   content: "";
   position: absolute;
   top: 0;
-  left: -12px;
-  width: 30px;
-  height: 30px;
+  left: -9px;
+  width: 22px;
+  height: 22px;
   background: #279d98;
   border-radius: 50%;
   z-index: 1;
@@ -124,22 +137,23 @@ body {
   color: #aebcbf;
   border: 1px solid #279d98;
   border-radius: 6px;
-  padding: 16px 20px;
-  margin-left: 40px;
+  padding: 12px 16px;
+  margin-left: 28px;
   box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
   transition: transform 0.3s ease;
   position: relative;
   z-index: 2;
+  font-size: calc(13px + var(--box-font-boost));
 }
 
 #timeline ul li .cont time {
   display: inline-block;
-  font-size: 16px;
+  font-size: calc(14px + var(--box-font-boost));
   background-color: #279d98;
   color: #0f1a1c;
-  padding: 4px 10px;
+  padding: 3px 8px;
   border-radius: 3px;
-  margin-bottom: 15px;
+  margin-bottom: 10px;
   font-weight: bold;
 }
 
@@ -148,38 +162,39 @@ body {
 }
 
 #timeline ul li:hover .cont {
-  transform: translateY(-6px);
+  transform: translateY(-4px);
 }
 
 .gap {
-  margin-bottom: 12px;
+  margin-bottom: 8px;
 }
 
 /* === Responsive === */
 @media screen and (max-width: 768px) {
   .about-container {
     flex-direction: column;
+    padding: 20px;
   }
 
   .right-column,
   .education-section {
-    margin-top: 30px;
+    margin-top: 20px;
   }
 
   #timeline ul {
-    margin-left: 30px;
+    margin-left: 20px;
   }
 
   #timeline ul::before {
-    left: 13px;
+    left: 8px;
   }
 
   #timeline ul li .cont {
-    margin-left: 30px;
+    margin-left: 20px;
     width: 90%;
   }
 
   #timeline ul li::after {
-    left: -15px;
+    left: -11px;
   }
 }

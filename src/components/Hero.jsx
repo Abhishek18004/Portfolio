@@ -149,7 +149,7 @@ function Hero() {
       <div className="hero-right">
         <p className="greeting">Hey there, this is</p>
         <h1 className="name">Abhishek Karthik</h1>
-        <p className="subtitle">AI/ML Engineer | Computer Vision & GenAI Specialist | President's Gold Medalist</p>
+        <p className="subtitle">AI/ML Engineer | Computer Vision & GenAI Specialist | Gold Medalist        </p>
         <div className="hero-buttons">
           <button className="pushable btn-filled" onClick={handleResumeClick}>
             <span className="shadow"></span>

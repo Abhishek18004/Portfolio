@@ -1,91 +1,103 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap');
 
+:root {
+  /* Adjust this variable (0px, 1px, 2px, etc.) to increase/decrease font sizes inside all boxes */
+  --box-font-boost: 1.5px;
+}
+
 .project-card {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   background-color: #000000;
   border-radius: 12px;
-  padding: 20px;
+  padding: 14px;
   color: #aebcbf;
-  gap: 20px;
+  gap: 12px;
   height: 100%;
   box-shadow: 0 0 12px rgba(0, 0, 0, 0.3);
   font-family: 'Montserrat', sans-serif;
+  min-width: 0;
+  box-sizing: border-box;
 }
 
 .project-content {
   display: flex;
   flex-direction: column;
-  gap: 12px;
+  gap: 8px;
   flex-grow: 1;
+  min-width: 0;
 }
 
 .project-content h3 {
-  font-size: 25px;
+  font-size: calc(16px + var(--box-font-boost));
   font-weight: bold;
   color: #ffc857;
+  word-break: break-word;
 }
 
 .tech-stack {
-  font-size: 15px;
+  font-size: calc(11px + var(--box-font-boost));
   color: #f4f4f4;
-  margin-bottom: 6px;
+  margin-bottom: 4px;
+  word-break: break-word;
 }
 
 .tech-stack.tools,
 .tech-stack.frameworks {
   color: #aebcbf;
-  font-size: 17px;
-  padding-bottom: 4px;
+  font-size: calc(11px + var(--box-font-boost));
+  padding-bottom: 2px;
   font-weight: bold;
 }
 
+/* Dynamic 16:9 Aspect Ratio Container */
 .project-image {
   position: relative;
   width: 100%;
-  max-width: 500px;
-  height: auto;
-  border-radius: 10px;
+  aspect-ratio: 16 / 9;
+  border-radius: 8px;
   overflow: hidden;
   transition: transform 0.3s ease;
   box-shadow: none;
+  flex-shrink: 0;
 }
 
 .project-image:hover {
-  transform: scale(1.05);
+  transform: scale(1.03);
 }
 
 .card-image {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  border-radius: 10px;
+  border-radius: 8px;
   display: block;
 }
 
 .image-title {
-  font-size: 18px;
+  font-size: calc(12px + var(--box-font-boost));
   font-weight: 600;
   color: #c8d5d8;
   margin: 0;
-  padding-bottom: 8px;
+  padding-bottom: 4px;
 }
 
 .card__content {
   position: absolute;
   top: 0;
   left: 0;
-  padding: 20px;
+  padding: 12px;
   width: 100%;
   height: 100%;
   background-color: rgba(15, 26, 28, 0.95);
   transform: rotateX(-90deg);
   transform-origin: bottom;
-  transition: all 0.6s ease;
+  transition: all 0.5s ease;
   z-index: 2;
   box-sizing: border-box;
   color: #aebcbf;
+  overflow-y: auto;
 }
 
 .project-image:hover .card__content {
@@ -94,16 +106,16 @@
 
 .card__title {
   margin: 0;
-  font-size: 18px;
+  font-size: calc(12px + var(--box-font-boost));
   font-weight: 700;
   color: #c8d5d8;
 }
 
 .card__description {
-  margin-top: 10px;
-  font-size: 18px;
+  margin-top: 4px;
+  font-size: calc(10.5px + var(--box-font-boost));
   color: #aebcbf;
-  line-height: 1.4;
+  line-height: 1.35;
 }
 
 /* -------------------- BUTTON SECTION -------------------- */
@@ -113,7 +125,7 @@
   width: 100%;
   display: flex;
   flex-direction: column;
-  gap: 12px;
+  gap: 8px;
   align-items: center;
 }
 
@@ -121,29 +133,29 @@
 .project-buttons.dual-buttons {
   flex-direction: row;
   justify-content: center;
-  gap: 12px;
+  gap: 6px;
 }
 
 /* GitHub Button (Filled Button Style) */
 .filled-button {
-  margin-top: 12px;
-  padding: 12px 28px;
+  margin-top: 6px;
+  padding: 6px 14px;
   font-family: 'Montserrat', sans-serif;
-  font-size: 17px;
+  font-size: calc(12px + var(--box-font-boost));
   font-weight: 600;
   display: flex;
   align-items: center;
   justify-content: space-between;
   text-decoration: none;
-  border-radius: 0.9em;
+  border-radius: 0.6em;
   background: #279d98;
   color: #0f1a1c;
-  letter-spacing: 0.03em;
+  letter-spacing: 0.02em;
   border: none;
-  box-shadow: inset 0 0 1.6em -0.6em #279d98;
+  box-shadow: inset 0 0 1em -0.5em #279d98;
   position: relative;
-  height: 2.8em;
-  padding-right: 3.3em;
+  height: 2.2em;
+  padding-right: 2.5em;
   transition: background-color 0.3s ease, transform 0.3s ease;
   cursor: pointer;
   width: 100%;
@@ -151,25 +163,25 @@
 
 .filled-button .icon {
   background: #0f1a1c;
-  margin-left: 1em;
+  margin-left: 0.6em;
   position: absolute;
-  right: 0.3em;
-  height: 2.2em;
-  width: 2.2em;
+  right: 0.2em;
+  height: 1.7em;
+  width: 1.7em;
   display: flex;
   align-items: center;
   justify-content: center;
-  border-radius: 0.7em;
-  box-shadow: 0.1em 0.1em 0.6em 0.2em #0f1a1c;
+  border-radius: 0.4em;
+  box-shadow: 0.1em 0.1em 0.4em 0.1em #0f1a1c;
   transition: all 0.3s;
 }
 
 .filled-button:hover .icon {
-  width: calc(100% - 0.6em);
+  width: calc(100% - 0.4em);
 }
 
 .filled-button .icon svg {
-  width: 1.1em;
+  width: 0.9em;
   transition: transform 0.3s;
   color: #279d98;
 }
@@ -186,19 +198,19 @@
 .cssbuttons-io {
   position: relative;
   font-family: 'Montserrat', sans-serif;
-  font-weight: 505;
-  font-size: 17px;
-  letter-spacing: 0.03em;
-  border-radius: 0.9em;
+  font-weight: 600;
+  font-size: calc(12px + var(--box-font-boost));
+  letter-spacing: 0.02em;
+  border-radius: 0.6em;
   cursor: pointer;
   border: none;
-  min-width: 140px;
+  min-width: 90px;
   background: linear-gradient(to right, #ffc857, #c5922d);
   color: #f4f4f4;
   text-shadow: 1px 1px 2px #030f14;
   overflow: hidden;
   text-decoration: none;
-  height: 2.8em;
+  height: 2.2em;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -210,13 +222,13 @@
   transition: color 0.4s;
   display: inline-flex;
   align-items: center;
-  padding: 10px 24px;
+  padding: 4px 12px;
 }
 
 .cssbuttons-io svg {
-  width: 1.2em;
-  height: 1.2em;
-  margin-right: 0.5em;
+  width: 0.9em;
+  height: 0.9em;
+  margin-right: 0.3em;
 }
 
 .cssbuttons-io::before {
