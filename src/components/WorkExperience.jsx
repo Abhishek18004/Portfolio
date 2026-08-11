@@ -21,7 +21,7 @@ const experienceData = [
     id: 2,
     title: 'AIML Developer',
     company: 'Club : Google Developer Group on Campus',
-    period: 'Aug 2023– Present',
+    period: 'Aug 2023– April 2025',
     techStack: 'TensorFlow.js, HTML, JavaScript, Convolutional Neural Network (CNN), MNIST',
     learnings: [
       'Built a CNN-based handwritten digit recognition project using TensorFlow.',
@@ -31,16 +31,17 @@ const experienceData = [
   },
   {
     id: 3,
-    title: 'Designing Member',
+    title: 'Design Lead & Member',
     company: 'Club : COGAAN',
-    period: 'July 2023– Present',
-    techStack: 'HTML, CSS',
+    period: 'July 2023 – April 2025',
+    techStack: 'Canva, Graphic Design, Brand Strategy, HTML, CSS',
     learnings: [
-      'Created banners, posters, and social media creatives for college fests.',
-      'Also built basic projects using HTML and CSS.',
+      'Designed print posters, event banners, and digital graphics for college fests and club activities.',
+      'Served as Design Lead during the club\'s inaugural flagship event, managing end-to-end creative direction.',
+      'Mentored team members by refining draft designs, improving visual consistency, and protecting team execution timelines.'
     ],
     color: '#56c5c0'  // teal
-  },
+  }
 ];
 
 function WorkExperience() {

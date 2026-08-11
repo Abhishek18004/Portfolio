@@ -19,7 +19,7 @@ function Connect() {
           <FaEnvelope />
           <span>Email</span>
         </a>
-        <a href="https://www.linkedin.com/in/abhishek-karthik-567981291/" target="_blank" className="social-btn" id="linkedin">
+        <a href="https://www.linkedin.com/in/abhishek-karthik-567981291/" target="_blank" rel="noopener noreferrer" className="social-btn" id="linkedin">
           <FaLinkedin />
           <span>LinkedIn</span>
         </a>

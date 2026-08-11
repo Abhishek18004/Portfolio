@@ -38,7 +38,7 @@
 }
 
 .skills-card {
-  background: radial-gradient(178.94% 106.41% at 26.42% 106.41%, #ffc757b7 0%, #FFF7B1 85%), #ffffff;
+  background: radial-gradient(178.94% 106.41% at 26.42% 106.41%, #73c3e5 0%, #b1ddfb 85%), #ffffff;
   padding: 20px;
   border-radius: 12px;
   box-shadow: 0px 155px 62px rgba(0, 0, 0, 0.01),
@@ -76,8 +76,8 @@
   align-items: center;
   justify-content: center;
   font-size: 24px;
-  color: #ffffff;
-  background-color: rgba(0, 0, 0, 0.8);
+  color: #ffc857;
+  background-color: #000000;
   border-radius: 50%;
   box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.2);
 }

@@ -1,6 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Playball&display=swap');
 
 .hero {
+  position: relative;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -11,23 +12,78 @@
   font-family: 'Montserrat', sans-serif;
   width: 100%;
   box-sizing: border-box;
+  overflow: hidden;
 }
 
-/* Left (Image) container remains unchanged */
+.constellation-canvas {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* Left (Image) container */
 .hero-left {
   width: 33.33%;
   display: flex;
   justify-content: flex-end;
   align-items: center;
   box-sizing: border-box;
+  z-index: 1;
+}
+
+.cyber-frame-wrapper {
+  position: relative;
+  width: 380px;
+  height: 380px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.cyber-ring {
+  position: absolute;
+  inset: 0;
+  border-radius: 50%;
+  padding: 4px;
+  background: conic-gradient(from 0deg, #38bdf8, #279d98, #7dd3fc, #32c5bd, #38bdf8);
+  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  animation: rotateCyber 6s linear infinite;
+}
+
+.cyber-glow {
+  position: absolute;
+  inset: -6px;
+  border-radius: 50%;
+  background: conic-gradient(from 0deg, #38bdf8, #279d98, #7dd3fc, #32c5bd, #38bdf8);
+  filter: blur(14px);
+  opacity: 0.55;
+  animation: rotateCyber 6s linear infinite;
+}
+
+@keyframes rotateCyber {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
 }
 
 .hero-image-frame {
+  position: relative;
   width: 360px;
   height: 360px;
   border-radius: 50%;
   overflow: hidden;
-  box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+  box-shadow: 0 0 30px rgba(0, 0, 0, 0.6);
+  z-index: 2;
+  border: 3px solid #152730;
 }
 
 .hero-image-frame img {
@@ -36,7 +92,7 @@
   object-fit: cover;
 }
 
-/* Right (Text) container – sizes increased */
+/* Right (Text) container */
 .hero-right {
   width: 66.66%;
   display: flex;
@@ -44,6 +100,7 @@
   align-items: center;
   text-align: center;
   box-sizing: border-box;
+  z-index: 1;
 }
 
 .greeting {
@@ -63,6 +120,8 @@
   font-size: 22px;
   color: #aebcbf;
   margin-bottom: 30px;
+  line-height: 1.4;
+  max-width: 800px;
 }
 
 .hero-buttons {
@@ -72,8 +131,7 @@
   justify-content: center;
 }
 
-/* --- Button Styles remain unchanged --- */
-
+/* --- Button Styles --- */
 .pushable {
   position: relative;
   background: transparent;
